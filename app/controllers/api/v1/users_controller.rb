@@ -2,7 +2,9 @@ class Api::V1::UsersController < ApplicationController
   respond_to :json
 
   def create
-    respond_with :api, :v1, User.create(user_params)
+    user = User.create(user_params)
+    session[:user_id] = user.id
+    respond_with :api, :v1, current_user
   end
 
   def show
