@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt'
 gem 'paperclip'
+gem 'materialize-sass'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
