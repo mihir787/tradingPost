@@ -20,6 +20,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'shoulda-matchers'
 end
 
 group :production do
