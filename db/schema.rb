@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729221928) do
+ActiveRecord::Schema.define(version: 20150730001217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,10 @@ ActiveRecord::Schema.define(version: 20150729221928) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "proposed_trades", force: :cascade do |t|
     t.integer  "status",     default: 0
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150729221928) do
 
   add_foreign_key "item_categories", "categories"
   add_foreign_key "item_categories", "items"
+  add_foreign_key "items", "users"
   add_foreign_key "proposed_trades", "items"
   add_foreign_key "proposed_trades", "users"
 end
