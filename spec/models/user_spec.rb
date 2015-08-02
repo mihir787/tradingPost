@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   it 'has many proposed_trades' do
     user = User.create(name: "michelle", email: "m@example.com", password: "password")
-    user.proposed_trades.create
-    expect(user.proposed_trades.length).to be(1)
+    user.trades.create
+    expect(user.trades.length).to be(1)
   end
 
   it 'has many items' do

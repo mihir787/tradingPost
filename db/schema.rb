@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730001217) do
+ActiveRecord::Schema.define(version: 20150802210255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,18 +36,19 @@ ActiveRecord::Schema.define(version: 20150730001217) do
     t.string   "title"
     t.string   "description"
     t.string   "desired_trade_items"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.integer  "user_id"
+    t.integer  "status",               default: 0
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
-  create_table "proposed_trades", force: :cascade do |t|
+  create_table "trades", force: :cascade do |t|
     t.integer  "status",     default: 0
     t.integer  "item_id"
     t.integer  "user_id"
@@ -55,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150730001217) do
     t.datetime "updated_at",             null: false
   end
 
-  add_index "proposed_trades", ["item_id"], name: "index_proposed_trades_on_item_id", using: :btree
-  add_index "proposed_trades", ["user_id"], name: "index_proposed_trades_on_user_id", using: :btree
+  add_index "trades", ["item_id"], name: "index_trades_on_item_id", using: :btree
+  add_index "trades", ["user_id"], name: "index_trades_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -73,6 +74,6 @@ ActiveRecord::Schema.define(version: 20150730001217) do
   add_foreign_key "item_categories", "categories"
   add_foreign_key "item_categories", "items"
   add_foreign_key "items", "users"
-  add_foreign_key "proposed_trades", "items"
-  add_foreign_key "proposed_trades", "users"
+  add_foreign_key "trades", "items"
+  add_foreign_key "trades", "users"
 end

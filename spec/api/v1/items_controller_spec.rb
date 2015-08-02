@@ -48,12 +48,13 @@ RSpec.describe "Api::V1::UsersController" do
     expect(response.status).to eq 200
     expect(body["title"]).to eq "some title"
 
-    item_params = {title: "new title", description: "new desc", desired_trade_items: "new items", user_id: user.id}
+    item_params = {status: 1, title: "new title", description: "new desc", desired_trade_items: "new items", user_id: user.id}
 
     put "/api/v1/items/#{item.id}", format: :json, item: item_params
 
     expect(response.status).to eq 204
     expect(Item.first.title).to eq "new title"
+    expect(Item.first.status).to eq "retired"
   end
 
   it 'can delete an item' do

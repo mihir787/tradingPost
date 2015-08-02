@@ -15,8 +15,8 @@ RSpec.describe Item, type: :model do
 
   it 'has many proposed_trades' do
     item = Item.create(title: "watch", description: "gold")
-    item.proposed_trades.create
-    expect(item.proposed_trades.length).to be(1)
+    item.trades.create
+    expect(item.trades.length).to be(1)
   end
 
   it {should validate_presence_of :title}

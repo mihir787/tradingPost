@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create, :destroy]
       resources :categories, only: [:create, :destroy, :index, :show]
       resources :items, except: [:new]
-      resources :proposed_trades, except: [:new]
+      resources :trades, except: [:new]
     end
   end
 
