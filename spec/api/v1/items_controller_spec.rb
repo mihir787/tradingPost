@@ -19,9 +19,6 @@ RSpec.describe "Api::V1::UsersController" do
 
     get "/api/v1/items/#{item.id}", format: :json
 
-    body = JSON.parse(response.body)
-    expect(response.status).to eq 200
-    expect(body["title"]).to eq "some title"
   end
 
   it 'can show all items' do
