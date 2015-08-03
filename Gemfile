@@ -12,6 +12,7 @@ gem 'paperclip'
 gem 'materialize-sass'
 gem 'responders'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'angularjs-rails'
 
 
 group :development, :test do
