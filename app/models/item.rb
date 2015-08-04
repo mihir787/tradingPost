@@ -11,5 +11,4 @@ class Item < ActiveRecord::Base
   validates :description, presence: true
 
   enum status: %w(active retired)
-
 end

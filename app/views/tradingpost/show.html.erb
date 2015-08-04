@@ -222,30 +222,20 @@
     </div>
 
 ________________________________________________ -->
-<div class="main" ng-controller="UserItemsController" data-ng-init="getItems()">
-      <div class="container">
-
-
-  <div ng-repeat="item in items" class="col-md-6">
-    <div class="thumbnail">
-      <!-- <img ng-src="{{ item.picture }}"> -->
-      <p class="title">{{ item.title }}</p>
-      <p class="price">{{ item.description }}</p>
-    </div>
-  </div>
 
 
 
-<div class="section horizontal-list" ng-controller="UserItemsController" data-ng-init="getItems()">
+
+<div class="section horizontal-list" >
   <h5>Listed Items</h5>
-  <div class="row" ng-repeat="item in items">
-      <div class="col s3">
-        <div class="card">
+  <div class="row" ng-controller="UserItemsController" data-ng-init="getItems()">
+      <div class="col s3" ng-repeat="item in items">
+        <div class="card picture">
           <div class="card-image">
-            <img src="{{item.picture}}">
+            <img src="/assets/{{item.picture_file_name}}" class="image-size">
           </div>
           <div class="card-content center">
-            <h4 class="title">{{ item.title }}</h4>
+            <h4 class="title">{{ item.title}}</h4>
             <p class="description">{{ item.description }}</p>
           </div>
           <!-- <div class="card-action">
@@ -253,7 +243,7 @@ ________________________________________________ -->
           </div> -->
         </div>
       </div>
-      <div class="col s3">
+      <!-- <div class="col s3">
         <div class="card">
           <div class="card-image">
             <img src="/assets/chair.jpg">
@@ -291,6 +281,6 @@ ________________________________________________ -->
             <a href="#">This is a link</a>
           </div> -->
         </div>
-      </div>
+      </div> -->
     </div>
 </div>
