@@ -47,6 +47,18 @@ class Seed
       user.items.create(title: "Ty Lawson Jersey", description: "Lightly used", desired_trade_items:"dog sitting").categories << Category.find(7)
       user.items.create(title: "Toaster", description: "Lightly used", desired_trade_items:"money").categories << Category.find(9)
       user.items.create(title: "Parking Spot 17th and Blake", description: "Close to school", desired_trade_items:"money").categories << Category.find(11)
+      user.items.create(title: "Queen mattress", description: "Only used for 7 months", desired_trade_items:"Iphone 5").categories << Category.find(1)
+      user.items.create(title: "Bakeware", description: "Lightly used", desired_trade_items:"house sitting").categories << Category.find(9)
+      user.items.create(title: "Leather Couch", description: "Lightly used", desired_trade_items:"Bike").categories << Category.find(1)
+      user.items.create(title: "Standing Lamp", description: "3 settings, 4 feet tall", desired_trade_items:"parking space").categories << Category.find(1)
+      user.items.create(title: "T Swift Tickets", description: "You know you want them", desired_trade_items:"tennis racket").categories << Category.find(2)
+      user.items.create(title: "Mountain Bike", description: "1 year old", desired_trade_items:"couch or loveseat").categories << Category.find(4)
+      user.items.create(title: "Northface Jacket", description: "Heavy winter coat lightly used", desired_trade_items:"Rockies tickets").categories << Category.find(7)
+      user.items.create(title: "Books", description: "Misc ruby, rails, javascript books", desired_trade_items:"dog sitting").categories << Category.find(5)
+      user.items.create(title: "Blender", description: "2 year old Ninja", desired_trade_items:"Bike").categories << Category.find(9)
+      user.items.create(title: "Nightstand", description: "3'x1.5'x 3'", desired_trade_items:"couch").categories << Category.find(1)
+
+
     end
   end
 
@@ -80,6 +92,36 @@ class Seed
     Trade.create(status: 2, item_id: 23, user_id: 3)
     Trade.create(status: 0, item_id: 24, user_id: 4)
     Trade.create(status: 1, item_id: 25, user_id: 1)
+
+    Trade.create(status: 0, item_id: 26, user_id: 1)
+    Trade.create(status: 1, item_id: 27, user_id: 2)
+    Trade.create(status: 2, item_id: 28, user_id: 3)
+    Trade.create(status: 0, item_id: 29, user_id: 4)
+    Trade.create(status: 1, item_id: 30, user_id: 1)
+
+    Trade.create(status: 0, item_id: 31, user_id: 1)
+    Trade.create(status: 1, item_id: 32, user_id: 2)
+    Trade.create(status: 2, item_id: 33, user_id: 3)
+    Trade.create(status: 0, item_id: 34, user_id: 4)
+    Trade.create(status: 1, item_id: 35, user_id: 1)
+
+    Trade.create(status: 0, item_id: 36, user_id: 1)
+    Trade.create(status: 1, item_id: 37, user_id: 2)
+    Trade.create(status: 2, item_id: 38, user_id: 5)
+    Trade.create(status: 0, item_id: 39, user_id: 4)
+    Trade.create(status: 1, item_id: 40, user_id: 6)
+
+    Trade.create(status: 0, item_id: 50, user_id: 1)
+    Trade.create(status: 1, item_id: 51, user_id: 5)
+    Trade.create(status: 2, item_id: 52, user_id: 3)
+    Trade.create(status: 0, item_id: 53, user_id: 6)
+    Trade.create(status: 1, item_id: 54, user_id: 1)
+
+    Trade.create(status: 0, item_id: 55, user_id: 6)
+    Trade.create(status: 1, item_id: 56, user_id: 5)
+    Trade.create(status: 2, item_id: 57, user_id: 3)
+    Trade.create(status: 0, item_id: 58, user_id: 4)
+    Trade.create(status: 1, item_id: 59, user_id: 1)
   end
 
 end
