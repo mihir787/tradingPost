@@ -207,6 +207,36 @@
 </div>
 
 <div class="divider"></div>
+<!-- _____________________________________________________________
+<div class="main" ng-controller="MainController">
+      <div class="container">
+
+
+    <div ng-repeat="product in products" class="col-md-6">
+      <div class="thumbnail">
+        <img ng-src="{{ product.cover }}">
+        <p class="title">{{ product.name }}</p>
+        <p class="price">{{ product.price | currency }}</p>
+        <p class="date">{{ product.pubdate | date }} </p>
+      </div>
+    </div>
+
+________________________________________________ -->
+<div class="main" ng-controller="UserItemsController">
+      <div class="container">
+
+
+  <div ng-repeat="product in products" class="col-md-6">
+    <div class="thumbnail">
+      <img ng-src="{{ product.cover }}">
+      <p class="title">{{ product.name }}</p>
+      <p class="price">{{ product.price | currency }}</p>
+      <p class="date">{{ product.pubdate | date }} </p>
+    </div>
+  </div>
+
+
+
 <div class="section horizontal-list">
   <h5>Listed Items</h5>
   <div class="row">
