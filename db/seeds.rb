@@ -42,21 +42,21 @@ class Seed
 
   def generate_items
     User.all.each do |user|
-      user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling").categories << Category.find(4)
-      user.items.create(title: "MacBook Pro", description: "2 years old", desired_trade_items:"money").categories << Category.find(3)
-      user.items.create(title: "Ty Lawson Jersey", description: "Lightly used", desired_trade_items:"dog sitting").categories << Category.find(7)
-      user.items.create(title: "Toaster", description: "Lightly used", desired_trade_items:"money").categories << Category.find(9)
+      user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling", picture: File.open("#{Rails.root}/app/assets/images/tennis_racket.jpg")).categories << Category.find(4)
+      user.items.create(title: "MacBook Pro", description: "2 years old", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/macbook_pro.jpg")).categories << Category.find(3)
+      user.items.create(title: "Ty Lawson Jersey", description: "Lightly used", desired_trade_items:"dog sitting", picture: File.open("#{Rails.root}/app/assets/images/lawson.jpeg")).categories << Category.find(7)
+      user.items.create(title: "Toaster", description: "Lightly used", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/toaster.jpeg")).categories << Category.find(9)
       user.items.create(title: "Parking Spot 17th and Blake", description: "Close to school", desired_trade_items:"money").categories << Category.find(11)
-      user.items.create(title: "Queen mattress", description: "Only used for 7 months", desired_trade_items:"Iphone 5").categories << Category.find(1)
-      user.items.create(title: "Bakeware", description: "Lightly used", desired_trade_items:"house sitting").categories << Category.find(9)
-      user.items.create(title: "Leather Couch", description: "Lightly used", desired_trade_items:"Bike").categories << Category.find(1)
-      user.items.create(title: "Standing Lamp", description: "3 settings, 4 feet tall", desired_trade_items:"parking space").categories << Category.find(1)
+      user.items.create(title: "Queen mattress", description: "Only used for 7 months", desired_trade_items:"Iphone 5", picture: File.open("#{Rails.root}/app/assets/images/mattress.jpg")).categories << Category.find(1)
+      user.items.create(title: "Bakeware", description: "Lightly used", desired_trade_items:"house sitting", picture: File.open("#{Rails.root}/app/assets/images/bakeware.jpg")).categories << Category.find(9)
+      user.items.create(title: "Leather Couch", description: "Lightly used", desired_trade_items:"Bike", picture: File.open("#{Rails.root}/app/assets/images/couch.jpg")).categories << Category.find(1)
+      user.items.create(title: "Standing Lamp", description: "3 settings, 4 feet tall", desired_trade_items:"parking space", picture: File.open("#{Rails.root}/app/assets/images/lamp.jpg")).categories << Category.find(1)
       user.items.create(title: "T Swift Tickets", description: "You know you want them", desired_trade_items:"tennis racket").categories << Category.find(2)
-      user.items.create(title: "Mountain Bike", description: "1 year old", desired_trade_items:"couch or loveseat").categories << Category.find(4)
-      user.items.create(title: "Northface Jacket", description: "Heavy winter coat lightly used", desired_trade_items:"Rockies tickets").categories << Category.find(7)
+      user.items.create(title: "Mountain Bike", description: "1 year old", desired_trade_items:"couch or loveseat", picture: File.open("#{Rails.root}/app/assets/images/bike.jpg")).categories << Category.find(4)
+      user.items.create(title: "Northface Jacket", description: "Heavy winter coat lightly used", desired_trade_items:"Rockies tickets", picture: File.open("#{Rails.root}/app/assets/images/coat.jpg")).categories << Category.find(7)
       user.items.create(title: "Books", description: "Misc ruby, rails, javascript books", desired_trade_items:"dog sitting").categories << Category.find(5)
-      user.items.create(title: "Blender", description: "2 year old Ninja", desired_trade_items:"Bike").categories << Category.find(9)
-      user.items.create(title: "Nightstand", description: "3'x1.5'x 3'", desired_trade_items:"couch").categories << Category.find(1)
+      user.items.create(title: "Blender", description: "2 year old Ninja", desired_trade_items:"Bike", picture: File.open("#{Rails.root}/app/assets/images/blender.jpeg")).categories << Category.find(9)
+      user.items.create(title: "Nightstand", description: "3'x1.5'x 3'", desired_trade_items:"couch", picture: File.open("#{Rails.root}/app/assets/images/nightstand.jpg")).categories << Category.find(1)
 
 
     end
