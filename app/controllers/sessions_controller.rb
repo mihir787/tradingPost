@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash.now[:success] = "Welcome #{user.name}"
       redirect_to user_path(user)
     else
-      flash.now[:danger] = @user.errors.full_messages.join(", ")
+      flash.now[:danger] = user.errors.full_messages.join(", ")
       render new
     end
   end
