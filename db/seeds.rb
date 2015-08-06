@@ -26,19 +26,19 @@ class Seed
     User.create(name: "Michelle Golle", email: "michelle@gmail.com", password: "password")
   end
 
-  def generate_categories
-      Category.create!(title: "Furniture" )
-      Category.create!(title: "Tickets")
-      Category.create!(title: "Computers")
-      Category.create!(title: "Sporting Equipment")
-      Category.create!(title: "Books")
-      Category.create!(title: "Electronics/Hardware")
-      Category.create!(title: "Clothes")
-      Category.create!(title: "Housing")
-      Category.create!(title: "Kitchen")
-      Category.create!(title: "Computer Accessories")
-      Category.create!(title: "Parking")
-  end
+  # def generate_categories
+  #     Category.create!(title: "Furniture", image: "#{Rails.root}/app/assets/images/.jpg")
+  #     Category.create!(title: "Tickets", image:)
+  #     Category.create!(title: "Computers", image:)
+  #     Category.create!(title: "Sporting Equipment", image:)
+  #     Category.create!(title: "Books", image:)
+  #     Category.create!(title: "Electronics/Hardware", image:)
+  #     Category.create!(title: "Clothes", image:)
+  #     Category.create!(title: "Housing", image:)
+  #     Category.create!(title: "Kitchen", image:)
+  #     Category.create!(title: "Computer Accessories", image:)
+  #     Category.create!(title: "Parking", image:)
+  # end
 
   def generate_items
     User.all.each do |user|
@@ -50,13 +50,13 @@ class Seed
       user.items.create(title: "Queen mattress", description: "Only used for 7 months", desired_trade_items:"Iphone 5", picture: File.open("#{Rails.root}/app/assets/images/mattress.jpg")).categories << Category.find(1)
       user.items.create(title: "Bakeware", description: "Lightly used", desired_trade_items:"house sitting", picture: File.open("#{Rails.root}/app/assets/images/bakeware.jpg")).categories << Category.find(9)
       user.items.create(title: "Leather Couch", description: "Lightly used", desired_trade_items:"Bike", picture: File.open("#{Rails.root}/app/assets/images/couch.jpg")).categories << Category.find(1)
-      user.items.create(title: "Standing Lamp", description: "3 settings, 4 feet tall", desired_trade_items:"parking space", picture: File.open("#{Rails.root}/app/assets/images/lamp.jpg")).categories << Category.find(1)
-      user.items.create(title: "T Swift Tickets", description: "You know you want them", desired_trade_items:"tennis racket").categories << Category.find(2)
+      user.items.create(title: "Standing Lamp", description: "3 settings, 4 feet tall", desired_trade_items:"none, free", picture: File.open("#{Rails.root}/app/assets/images/lamp.jpg")).categories << Category.find(1)
+      user.items.create(title: "T Swift Tickets", description: "You know you want them", desired_trade_items:"roller skates").categories << Category.find(2)
       user.items.create(title: "Mountain Bike", description: "1 year old", desired_trade_items:"couch or loveseat", picture: File.open("#{Rails.root}/app/assets/images/bike.jpg")).categories << Category.find(4)
       user.items.create(title: "Northface Jacket", description: "Heavy winter coat lightly used", desired_trade_items:"Rockies tickets", picture: File.open("#{Rails.root}/app/assets/images/coat.jpg")).categories << Category.find(7)
       user.items.create(title: "Books", description: "Misc ruby, rails, javascript books", desired_trade_items:"dog sitting").categories << Category.find(5)
-      user.items.create(title: "Blender", description: "2 year old Ninja", desired_trade_items:"Bike", picture: File.open("#{Rails.root}/app/assets/images/blender.jpeg")).categories << Category.find(9)
-      user.items.create(title: "Nightstand", description: "3'x1.5'x 3'", desired_trade_items:"couch", picture: File.open("#{Rails.root}/app/assets/images/nightstand.jpg")).categories << Category.find(1)
+      user.items.create(title: "Blender", description: "2 year old Ninja", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/blender.jpeg")).categories << Category.find(9)
+      user.items.create(title: "Nightstand", description: "3'x1.5'x 3'", desired_trade_items:"cookies", picture: File.open("#{Rails.root}/app/assets/images/nightstand.jpg")).categories << Category.find(1)
 
 
     end

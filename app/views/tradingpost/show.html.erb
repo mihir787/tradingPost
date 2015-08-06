@@ -2,7 +2,7 @@
   <form class="col s12">
     <div class="row section">
       <div class="input-field col s3 offset-s1">
-        <input id="search_for" type="text" class="validate">
+        <input id="search_for" type="text" class="validate" ng-model="query">
         <label for="search_for">Search for...</label>
       </div>
       <div class="input-field col s3">
@@ -229,7 +229,7 @@ ________________________________________________ -->
 <div class="section horizontal-list" >
   <h5>Listed Items</h5>
   <div class="row" ng-controller="UserItemsController" data-ng-init="getItems()">
-      <div class="col s3" ng-repeat="item in items">
+      <div class="col s3" ng-repeat="item in items | filter:query">
         <div class="card picture">
           <div class="card-image">
             <img src="/assets/{{item.picture_file_name}}" class="image-size">
