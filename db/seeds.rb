@@ -26,19 +26,19 @@ class Seed
     User.create(name: "Michelle Golle", email: "michelle@gmail.com", password: "password")
   end
 
-  # def generate_categories
-  #     Category.create!(title: "Furniture", image: "#{Rails.root}/app/assets/images/.jpg")
-  #     Category.create!(title: "Tickets", image:)
-  #     Category.create!(title: "Computers", image:)
-  #     Category.create!(title: "Sporting Equipment", image:)
-  #     Category.create!(title: "Books", image:)
-  #     Category.create!(title: "Electronics/Hardware", image:)
-  #     Category.create!(title: "Clothes", image:)
-  #     Category.create!(title: "Housing", image:)
-  #     Category.create!(title: "Kitchen", image:)
-  #     Category.create!(title: "Computer Accessories", image:)
-  #     Category.create!(title: "Parking", image:)
-  # end
+  def generate_categories
+      Category.create!(title: "Furniture", image: "#{Rails.root}/app/assets/images/furniture.jpg")
+      Category.create!(title: "Tickets", image: "#{Rails.root}/app/assets/images/tickets.jpg")
+      Category.create!(title: "Computers", image: "#{Rails.root}/app/assets/images/computers.jpg")
+      Category.create!(title: "Sporting Equipment", image: "#{Rails.root}/app/assets/images/sports.jpg")
+      Category.create!(title: "Books", image: "#{Rails.root}/app/assets/images/books.jpg")
+      Category.create!(title: "Electronics/Hardware", image: "#{Rails.root}/app/assets/images/electronics.jpg")
+      Category.create!(title: "Clothes", image: "#{Rails.root}/app/assets/images/clothes.jpg")
+      Category.create!(title: "Housing", image: "#{Rails.root}/app/assets/images/housing.jpg")
+      Category.create!(title: "Kitchen", image: "#{Rails.root}/app/assets/images/kitchen.jpg")
+      Category.create!(title: "Computer Accessories", image: "#{Rails.root}/app/assets/images/comp-accessories.jpg")
+      Category.create!(title: "Parking", image: "#{Rails.root}/app/assets/images/parking.jpg")
+  end
 
   def generate_items
     User.all.each do |user|
