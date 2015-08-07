@@ -13,6 +13,7 @@ gem 'materialize-sass'
 gem 'responders'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'angularjs-rails'
+gem 'angular-rails-templates'
 
 
 group :development, :test do
