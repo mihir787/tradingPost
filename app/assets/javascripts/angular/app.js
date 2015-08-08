@@ -4,13 +4,13 @@ app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'index.html',
+        templateUrl: '/views/index.html',
         controller: 'CategoriesController',
         controllerAs: 'categories'
       })
 }]);
 
-app.controller('CategoriesController', ['$scope', "$http", "$location", function($scope, $http, $location) {
+app.controller('CategoriesController', ['$scope', "$http", function($scope, $http) {
   $scope.categories = [];
 
   $scope.fetch = function() {
