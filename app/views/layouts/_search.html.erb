@@ -1,0 +1,29 @@
+<div class="row">
+  <form class="col s12" ng-controller="CategoriesController">
+    <div class="row section">
+      <div class="input-field col s4 offset-s1">
+        <input id="search_for" type="text" class="validate">
+        <label for="search_for">Search for...</label>
+      </div>
+
+      <div class="col s3 categories">
+        <a class='dropdown-button btn-large cyan' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
+          <i class="material-icons left">view_list</i>
+          Categories
+        </a>
+        <ul id='demoDropdown' class='dropdown-content'>
+          <li ng-repeat="category in categories">
+            <a href="javascript:void(0);" value="{{category.id}}">{{category.title}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col s2 center">
+        <a class="waves-effect waves-light cyan btn-large" ng-click="fetch()"><i class="material-icons left">search</i>Search</a>
+      </div>
+      <div class="col s2 center">
+        <a class="waves-effect waves-light cyan btn-large"><i class="material-icons left">add</i>Add Item</a>
+      </div>
+    </div>
+  </form>
+</div>
