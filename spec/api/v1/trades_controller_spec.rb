@@ -6,7 +6,7 @@ RSpec.describe "Api::V1::TradesController" do
     user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling")
 
     trade_proposer = User.create(:name => "kyle", :email => "kyle@gmail.com", :password => "password", :password_confirmation => "password")
-    proposed_trade_params = {item_id: user.items.first.id, user_id: trade_proposer.id}
+    proposed_trade_params = {item_id: user.items.first.id, user_id: trade_proposer.id, message: "Poopin"}
 
     post '/api/v1/trades', format: :json, trade: proposed_trade_params
 
@@ -19,7 +19,7 @@ RSpec.describe "Api::V1::TradesController" do
     user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling")
     trade_proposer = User.create(:name => "kyle", :email => "kyle@gmail.com", :password => "password", :password_confirmation => "password")
 
-    trade = Trade.create(item_id: user.items.first.id, user_id: trade_proposer.id)
+    trade = Trade.create(item_id: user.items.first.id, user_id: trade_proposer.id, message: "Poopin")
 
     get "/api/v1/trades/#{trade.id}", format: :json
 
@@ -34,7 +34,7 @@ RSpec.describe "Api::V1::TradesController" do
     user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling")
     trade_proposer = User.create(:name => "kyle", :email => "kyle@gmail.com", :password => "password", :password_confirmation => "password")
 
-    trade = Trade.create(item_id: user.items.first.id, user_id: trade_proposer.id)
+    trade = Trade.create(item_id: user.items.first.id, user_id: trade_proposer.id, message: "Poopin")
 
     updated_proposed_trade_params = {status: 1, item_id: user.items.first.id, user_id: trade_proposer.id}
 
@@ -49,7 +49,7 @@ RSpec.describe "Api::V1::TradesController" do
     user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling")
     trade_proposer = User.create(:name => "kyle", :email => "kyle@gmail.com", :password => "password", :password_confirmation => "password")
 
-    trade = Trade.create(item_id: user.items.first.id, user_id: trade_proposer.id)
+    trade = Trade.create(item_id: user.items.first.id, user_id: trade_proposer.id, message: "Poopin")
 
     expect(Trade.first.status).to eq "pending"
     expect(Trade.count).to eq 1
