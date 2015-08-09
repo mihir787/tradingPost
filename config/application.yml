@@ -1,0 +1,7 @@
+production:
+
+development:
+  root: 'http://localhost:3000/'
+
+test:
+  root: 'http://localhost:3000/'

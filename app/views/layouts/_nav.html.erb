@@ -2,9 +2,12 @@
   <div class="nav-wrapper logo grey lighten-4">
     <%= link_to "Cowboy Kyle's Trading Post", root_path, class: "brand-logo brand cyan-text" %>
     <ul id="nav-mobile" class="right brand cyan">
-      <li><%= link_to "Log In" %></li>
-      <li><%= link_to "Categories" %></li>
-      <li><%= link_to "Log Out" %></li>
+      <li><%= link_to "Categories", categories_path %></li>
+      <% if current_user %>
+      <li><%= link_to "Log Out", logout_path %></li>
+      <% else %>
+      <li><%= link_to "Log In", login_path %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
