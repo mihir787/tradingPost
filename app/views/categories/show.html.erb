@@ -1,7 +1,7 @@
 <div class="section horizontal-list">
   <h5>Items in <%= @category.title %></h5>
   <div class="row" ng-controller="ItemsController">
-      <div class="col s3" ng-repeat="item in items | filter:{'category_id':1}:true">
+      <div class="col s3" ng-repeat="item in items | filter:{'category_id':<%= @category.id %>}:true">
 
           <div class="card picture">
             <div class="card-image">
