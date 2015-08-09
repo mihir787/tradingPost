@@ -32,10 +32,7 @@ app.controller('ItemsController', ['$scope', '$http', '$location', function($sco
   // })
   $scope.items = [];
   $scope.init = function() {
-
-    var location = $location
-        debugger;
-    $http.get(location.$$path = "api/v1/items.json")
+    $http.get("http://localhost:3000/api/v1/items.json")
       .success(function(result) {
         $scope.items = result;
       });
