@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script>
+  <div id="environment" style="display: none;"><%= ENV['root']%></div>
 </head>
 <body ng-app="tradingPost">
   <%= render :partial => 'layouts/nav' %>
