@@ -10,11 +10,12 @@ app.config(['$routeProvider', '$locationProvider',
       })
 }]);
 
-app.controller('CategoriesController', ['$scope', "$http", function($scope, $http) {
+app.controller('CategoriesController', ['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.categories = [];
 
   $scope.fetch = function() {
-    $http.get("api/v1/categories.json")
+    var location = $location
+    $http.get(location.$$path = "api/v1/categories.json")
       .success(function(result) {
         $scope.categories = result;
       });
@@ -23,13 +24,22 @@ app.controller('CategoriesController', ['$scope', "$http", function($scope, $htt
   $scope.fetch();
 }]);
 
-app.controller('UserItemsController', ['$scope', "$http", function($scope, $http) {
-  $http.get("api/v1/items.json")
-  .success(function(result) {
-    $scope.items = result;
-  })
-    // .error(function(data, status) {
-    //   console.log(data);
-    // })
-  }
-]);
+app.controller('ItemsController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+  // var location = window.location.pathname = "api/v1/items"
+  // $http.get(location)
+  // .success(function(result) {
+  //   $scope.items = result;
+  // })
+  $scope.items = [];
+  $scope.init = function() {
+
+    var location = $location
+        debugger;
+    $http.get(location.$$path = "api/v1/items.json")
+      .success(function(result) {
+        $scope.items = result;
+      });
+    }
+
+  $scope.init();
+}]);

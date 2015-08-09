@@ -3,9 +3,8 @@ class Item < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: ["image/jpg", "image/jpeg", "image/png"]
 
   belongs_to :user
+  belongs_to :category
   has_many :trades
-  has_many :item_categories
-  has_many :categories, through: :item_categories
 
   validates :title, presence: true
   validates :description, presence: true

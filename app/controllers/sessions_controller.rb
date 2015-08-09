@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password]) && !session[:user_id]
       session[:user_id] = user.id
-      flash.now[:success] = "Welcome #{user.name}"
+      flash[:success] = "Welcome #{user.name}"
       redirect_to user_path(user)
     else
-      flash.now[:danger] = user.errors.full_messages.join(", ")
-      render new
+      flash[:danger] = "invalid login"
+      redirect_to login_path
     end
   end
 
