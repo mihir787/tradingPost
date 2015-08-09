@@ -33,7 +33,10 @@
                 <h4>{{item.title}}</h4>
                 <h6>Desired trade items: {{item.desired_trade_items}}</h6>
                 <p>{{item.description}}</p>
-
+                <form ng-submit="createTrade()">
+                  Message to Item Owner: <input type="text" ng-model="title"><br>
+                  <button type="submit" class="btn-flat">Submit</button>
+                </form>
               </div>
               <div class="modal-footer">
                 <button data-ng-click="closeModal()" class="btn-flat">Close</button>
