@@ -42,6 +42,10 @@ class Seed
 
   def generate_items
     User.all.each do |user|
+      user.items.create(title: "2012 Macbook Pro Charger", description: "Lightly used", desired_trade_items:"free", category_id: 10)
+      user.items.create(title: "Wireless Mouse", description: "Never used", desired_trade_items:"computer chair", picture: File.open("#{Rails.root}/app/assets/images/mouse.jpg"), category_id: 10)
+      user.items.create(title: "Apartment for sublet in Lodo", description: "1 bed 1 bath, 700sq feet.", desired_trade_items:"money, cars, rims, and bling", category_id: 8, picture: File.open("#{Rails.root}/app/assets/images/apt1.jpg"))
+      user.items.create(title: "Cap Hill Apartment", description: "1 bed 1 bath, 700sq feet.", desired_trade_items:"money, cars, rims, and bling", category_id: 8, picture: File.open("#{Rails.root}/app/assets/images/apt2.jpg"))
       user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling", picture: File.open("#{Rails.root}/app/assets/images/tennis_racket.jpg"), category_id: 4)
       user.items.create(title: "MacBook Pro", description: "2 years old", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/macbook_pro.jpg"), category_id: 3)
       user.items.create(title: "Ty Lawson Jersey", description: "Lightly used", desired_trade_items:"dog sitting", picture: File.open("#{Rails.root}/app/assets/images/lawson.jpeg"), category_id: 7)
