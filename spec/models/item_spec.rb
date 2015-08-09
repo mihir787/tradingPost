@@ -4,7 +4,7 @@ RSpec.describe Item, type: :model do
   it 'has many categories' do
     category = Category.create(title: "furniture")
     item = category.items.create(title: "couch", description: "blue sectional")
-    expect(item.categories.length).to be(1)
+    expect(item.category.title).to eq("furniture")
   end
 
   it 'belongs to a user' do
