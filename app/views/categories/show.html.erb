@@ -1,7 +1,7 @@
+<div class="row" ng-controller="ItemsController">
 <div class="section horizontal-list">
   <h5>Items in <%= @category.title %></h5>
-  <div class="row" ng-controller="ItemsController">
-      <div class="col s3" ng-repeat="item in items | filter:{'category_id':<%= @category.id %>}:true">
+      <div class="col s3" id="mainPage" ng-repeat="item in items | filter:{'category_id':<%= @category.id %>}:true">
 
           <div class="card picture">
             <div class="card-image">
@@ -14,8 +14,31 @@
             </div>
             <div class="card-content center">
               <h4 class="title">{{ item.title }}</h4>
+              <button data-ng-click="initModal()" data-target="modal{{item.id}}" class="btn">Modal</button>
             </div>
           </div>
+          <div id="modal{{item.id}}" class="modal">
+              <div class="modal-content">
+                <h4>{{item.title}}</h4>
+                <h6>Desired trade items: {{item.desired_trade_items}}</h6>
+                <p>{{item.description}}</p>
+
+              </div>
+              <div class="modal-footer">
+                <button data-ng-click="closeModal()" class="btn-flat">Close</button>
+              </div>
+          </div>
+        </div>
       </div>
   </div>
-</div>
+
+
+<!-- <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div> -->

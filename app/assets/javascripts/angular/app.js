@@ -39,7 +39,18 @@ app.controller('ItemsController', ['$scope', '$http', '$location', function($sco
       .success(function(result) {
         $scope.items = result;
       });
-    }
+  }
+
+
+  $scope.initModal = function() {
+    $scope.currentId = this.item.id
+    $('#modal' + $scope.currentId).openModal();
+  }
+
+  $scope.closeModal = function() {
+      $scope.currentId = this.item.id
+     $('#modal' + $scope.currentId).closeModal();
+  }
 
   $scope.init();
 }]);
