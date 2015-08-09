@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>TradingPost</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-rails-templates.js"></script>
+</head>
+<body ng-app="tradingPost">
+  <ng-view></ng-view>
+
+  <%= render :partial => 'layouts/nav' %>
+  <%= render :partial => 'layouts/search' %>
+
+</body>
+</html>

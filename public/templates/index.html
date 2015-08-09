@@ -1,0 +1,17 @@
+<div class="divider"></div>
+
+<div ng-include=" 'index.html' " class="section horizontal-list" >
+  <h5>Categories</h5>
+  <div  class="row" ng-controller="CategoriesController">
+      <div class="col s3" ng-repeat="category in categories">
+        <div class="card picture">
+          <div class="card-image">
+            <img src="/assets/couch.jpg" class="image-size">
+          </div>
+          <div class="card-content center">
+            <h4 class="title">{{ category.title }}</h4>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
