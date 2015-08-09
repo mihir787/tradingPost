@@ -5,7 +5,12 @@
 
           <div class="card picture">
             <div class="card-image">
-              <img src="/assets/{{item.picture_file_name}}" class="image-size">
+              <div ng-if="null == item.picture_file_name">
+                <img src="/assets/default_image.jpg" class="image-size">
+              </div>
+              <div ng-if="null != item.picture_file_name">
+                <img src="/assets/{{item.picture_file_name}}" class="image-size">
+              </div>
             </div>
             <div class="card-content center">
               <h4 class="title">{{ item.title }}</h4>
