@@ -13,7 +13,7 @@
         </a>
         <ul id='demoDropdown' class='dropdown-content'>
           <li ng-repeat="category in categories">
-            <a href="javascript:void(0);" value="{{category.id}}">{{category.title}}</a>
+            <a href="javascript:void(0);" value="{{category.id}}" ng-model="category">{{category.title}}</a>
           </li>
         </ul>
       </div>
@@ -22,8 +22,10 @@
         <a class="waves-effect waves-light cyan btn-large" ng-click="fetch()"><i class="material-icons left">search</i>Search</a>
       </div>
       <div class="col s2 center">
-        <a class="waves-effect waves-light cyan btn-large"><i class="material-icons left">add</i>Add Item</a>
+        <a href="/items/new" class="waves-effect waves-light cyan btn-large"><i class="material-icons left">add</i>Add Item</a>
       </div>
     </div>
   </form>
 </div>
+
+<div class="divider"></div>

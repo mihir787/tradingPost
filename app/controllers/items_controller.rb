@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  
 
   def new
     @item = Item.new
@@ -6,12 +7,18 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.new(item_params)
-    if item.save
-      flash.now[:success] = "Item successfully created!"
-      redirect_to user_path(current_user)
+    if current_user
+      if item.save
+        current_user.items << item
+        flash[:success] = "Item successfully created!"
+        redirect_to user_path(current_user)
+      else
+        flash[:danger] = item.errors.full_messages.join(", ")
+        render :new
+      end
     else
-      flash.now[:danger] = item.errors.full_messages.join(", ")
-      render :new
+      redirect_to login_path
+      flash[:danger] = "You must be logged in to add an item."
     end
   end
 

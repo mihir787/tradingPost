@@ -1,0 +1,16 @@
+<div class="section horizontal-list">
+  <h5>Items in <%= @category.title %></h5>
+  <div class="row" ng-controller="ItemsController">
+      <div class="col s3" ng-repeat="item in items">
+
+          <div class="card picture">
+            <div class="card-image">
+              <img src="/assets/{{item.image}}" class="image-size">
+            </div>
+            <div class="card-content center">
+              <h4 class="title">{{ item.title }}</h4>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

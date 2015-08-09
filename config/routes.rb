@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root to: "index#index"
+  root to: "categories#index"
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   get '/logout', to: "sessions#destroy"
 
   resources :users, only: [:new, :create, :show]
-  resources :categories, only: [:index]
+  resources :categories, only: [:index, :show]
   resources :items, only: [:new, :create]
 
   namespace :api do

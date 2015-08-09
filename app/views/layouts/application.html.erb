@@ -13,6 +13,17 @@
   <%= render :partial => 'layouts/nav' %>
   <%= render :partial => 'layouts/search' %>
 
-  <ng-view></ng-view>
+  <% if !flash.empty? %>
+    <div class="row">
+      <div class="col s4 offset-s4">
+        <% flash.each do |type, message| %>
+        <%= content_tag :div, message, class: "#{type} flash_message center-align" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
 </body>
 </html>

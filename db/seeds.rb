@@ -27,38 +27,36 @@ class Seed
   end
 
   def generate_categories
-      Category.create!(title: "Furniture", image: "#{Rails.root}/app/assets/images/furniture.jpg")
-      Category.create!(title: "Tickets", image: "#{Rails.root}/app/assets/images/tickets.jpg")
-      Category.create!(title: "Computers", image: "#{Rails.root}/app/assets/images/computers.jpg")
-      Category.create!(title: "Sporting Equipment", image: "#{Rails.root}/app/assets/images/sports.jpg")
-      Category.create!(title: "Books", image: "#{Rails.root}/app/assets/images/books.jpg")
-      Category.create!(title: "Electronics/Hardware", image: "#{Rails.root}/app/assets/images/electronics.jpg")
-      Category.create!(title: "Clothes", image: "#{Rails.root}/app/assets/images/clothes.jpg")
-      Category.create!(title: "Housing", image: "#{Rails.root}/app/assets/images/housing.jpg")
-      Category.create!(title: "Kitchen", image: "#{Rails.root}/app/assets/images/kitchen.jpg")
-      Category.create!(title: "Computer Accessories", image: "#{Rails.root}/app/assets/images/comp-accessories.jpg")
-      Category.create!(title: "Parking", image: "#{Rails.root}/app/assets/images/parking.jpg")
+      Category.create!(title: "Furniture", image: "furniture.jpg")
+      Category.create!(title: "Tickets", image: "tickets.jpg")
+      Category.create!(title: "Computers", image: "computers.jpg")
+      Category.create!(title: "Sporting Equipment", image: "sports.jpg")
+      Category.create!(title: "Books", image: "books.jpg")
+      Category.create!(title: "Electronics/Hardware", image: "electronics.jpg")
+      Category.create!(title: "Clothes", image: "clothes.jpg")
+      Category.create!(title: "Housing", image: "housing.jpg")
+      Category.create!(title: "Kitchen", image: "kitchen.jpg")
+      Category.create!(title: "Computer Accessories", image: "comp-accessories.jpg")
+      Category.create!(title: "Parking", image: "parking.jpg")
   end
 
   def generate_items
     User.all.each do |user|
-      user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling", picture: File.open("#{Rails.root}/app/assets/images/tennis_racket.jpg")).categories << Category.find(4)
-      user.items.create(title: "MacBook Pro", description: "2 years old", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/macbook_pro.jpg")).categories << Category.find(3)
-      user.items.create(title: "Ty Lawson Jersey", description: "Lightly used", desired_trade_items:"dog sitting", picture: File.open("#{Rails.root}/app/assets/images/lawson.jpeg")).categories << Category.find(7)
-      user.items.create(title: "Toaster", description: "Lightly used", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/toaster.jpeg")).categories << Category.find(9)
-      user.items.create(title: "Parking Spot 17th and Blake", description: "Close to school", desired_trade_items:"money").categories << Category.find(11)
-      user.items.create(title: "Queen mattress", description: "Only used for 7 months", desired_trade_items:"Iphone 5", picture: File.open("#{Rails.root}/app/assets/images/mattress.jpg")).categories << Category.find(1)
-      user.items.create(title: "Bakeware", description: "Lightly used", desired_trade_items:"house sitting", picture: File.open("#{Rails.root}/app/assets/images/bakeware.jpg")).categories << Category.find(9)
-      user.items.create(title: "Leather Couch", description: "Lightly used", desired_trade_items:"Bike", picture: File.open("#{Rails.root}/app/assets/images/couch.jpg")).categories << Category.find(1)
-      user.items.create(title: "Standing Lamp", description: "3 settings, 4 feet tall", desired_trade_items:"none, free", picture: File.open("#{Rails.root}/app/assets/images/lamp.jpg")).categories << Category.find(1)
-      user.items.create(title: "T Swift Tickets", description: "You know you want them", desired_trade_items:"roller skates").categories << Category.find(2)
-      user.items.create(title: "Mountain Bike", description: "1 year old", desired_trade_items:"couch or loveseat", picture: File.open("#{Rails.root}/app/assets/images/bike.jpg")).categories << Category.find(4)
-      user.items.create(title: "Northface Jacket", description: "Heavy winter coat lightly used", desired_trade_items:"Rockies tickets", picture: File.open("#{Rails.root}/app/assets/images/coat.jpg")).categories << Category.find(7)
-      user.items.create(title: "Books", description: "Misc ruby, rails, javascript books", desired_trade_items:"dog sitting").categories << Category.find(5)
-      user.items.create(title: "Blender", description: "2 year old Ninja", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/blender.jpeg")).categories << Category.find(9)
-      user.items.create(title: "Nightstand", description: "3'x1.5'x 3'", desired_trade_items:"cookies", picture: File.open("#{Rails.root}/app/assets/images/nightstand.jpg")).categories << Category.find(1)
-
-
+      user.items.create(title: "Tennis Racket", description: "Lightly used", desired_trade_items:"money, cars, rims, and bling", picture: File.open("#{Rails.root}/app/assets/images/tennis_racket.jpg"), category_id: 4)
+      user.items.create(title: "MacBook Pro", description: "2 years old", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/macbook_pro.jpg"), category_id: 3)
+      user.items.create(title: "Ty Lawson Jersey", description: "Lightly used", desired_trade_items:"dog sitting", picture: File.open("#{Rails.root}/app/assets/images/lawson.jpeg"), category_id: 7)
+      user.items.create(title: "Toaster", description: "Lightly used", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/toaster.jpeg"), category_id: 9)
+      user.items.create(title: "Parking Spot 17th and Blake", description: "Close to school", desired_trade_items:"money", category_id: 11)
+      user.items.create(title: "Queen mattress", description: "Only used for 7 months", desired_trade_items:"Iphone 5", picture: File.open("#{Rails.root}/app/assets/images/mattress.jpg"), category_id: 1)
+      user.items.create(title: "Bakeware", description: "Lightly used", desired_trade_items:"house sitting", picture: File.open("#{Rails.root}/app/assets/images/bakeware.jpg"), category_id: 9)
+      user.items.create(title: "Leather Couch", description: "Lightly used", desired_trade_items:"Bike", picture: File.open("#{Rails.root}/app/assets/images/couch.jpg"), category_id: 1)
+      user.items.create(title: "Standing Lamp", description: "3 settings, 4 feet tall", desired_trade_items:"none, free", picture: File.open("#{Rails.root}/app/assets/images/lamp.jpg"), category_id: 1)
+      user.items.create(title: "T Swift Tickets", description: "You know you want them", desired_trade_items:"roller skates", category_id: 2)
+      user.items.create(title: "Mountain Bike", description: "1 year old", desired_trade_items:"couch or loveseat", picture: File.open("#{Rails.root}/app/assets/images/bike.jpg"), category_id: 4)
+      user.items.create(title: "Northface Jacket", description: "Heavy winter coat lightly used", desired_trade_items:"Rockies tickets", picture: File.open("#{Rails.root}/app/assets/images/coat.jpg"), category_id: 7)
+      user.items.create(title: "Books", description: "Misc ruby, rails, javascript books", desired_trade_items:"dog sitting", category_id: 5)
+      user.items.create(title: "Blender", description: "2 year old Ninja", desired_trade_items:"money", picture: File.open("#{Rails.root}/app/assets/images/blender.jpeg"), category_id: 9)
+      user.items.create(title: "Nightstand", description: "3'x1.5'x 3'", desired_trade_items:"cookies", picture: File.open("#{Rails.root}/app/assets/images/nightstand.jpg"), category_id: 1)
     end
   end
 
