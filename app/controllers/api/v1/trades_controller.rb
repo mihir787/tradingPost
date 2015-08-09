@@ -32,7 +32,8 @@ class Api::V1::TradesController < ApplicationController
   def proposed_trade_params
     params.require(:trade).permit(:status,
                                 :item_id,
-                                :user_id)
+                                :user_id,
+                                :message)
   end
 
 end

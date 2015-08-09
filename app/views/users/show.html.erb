@@ -190,12 +190,32 @@
 <div class="divider"></div>
 
 <div class="section horizontal-list" >
-  <h5>Listed Items</h5>
-  <div class="row" ng-controller="UserItemsController">
-      <div class="col s3" ng-repeat="item in items | filter:query">
+  <h5>Proposed Trades</h5>
+  <div class="row" ng-controller="TradesController">
+      <div class="col s3" ng-repeat="trade in trades | filter:{'user_id':<%= current_user.id %>}:true">
         <div class="card picture">
           <div class="card-image">
-            <img src="{{item.picture_file_name}}" class="image-size">
+            <!-- <img src="/assets/{{trade.picture_file_name}}" class="image-size"> -->
+          </div>
+          <div class="card-content center">
+            <!-- <h4 class="title">{{ item.title }}</h4> -->
+            <p class="message">{{ trade.message }}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="divider"></div>
+
+<div class="section horizontal-list" >
+  <h5>Listed Items</h5>
+  <div class="row" ng-controller="ItemsController">
+      <div class="col s3" ng-repeat="item in items | filter:{'user_id':<%= current_user.id %>}:true | filter:query">
+        <div class="card picture">
+          <div class="card-image">
+            <img src="/assets/{{item.picture_file_name}}" class="image-size">
           </div>
           <div class="card-content center">
             <h4 class="title">{{ item.title }}</h4>

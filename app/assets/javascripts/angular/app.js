@@ -25,12 +25,7 @@ app.controller('CategoriesController', ['$scope', '$http', '$location', function
   $scope.fetch();
 }]);
 
-app.controller('ItemsController', ['$scope', '$http', '$location', function($scope, $http, $location) {
-  // var location = window.location.pathname = "api/v1/items"
-  // $http.get(location)
-  // .success(function(result) {
-  //   $scope.items = result;
-  // })
+app.controller('ItemsController', ['$scope', '$http', function($scope, $http) {
   var environment = document.getElementById('environment').innerHTML
 
   $scope.items = [];
@@ -41,6 +36,17 @@ app.controller('ItemsController', ['$scope', '$http', '$location', function($sco
       });
   }
 
+  $scope.newMessage = function() {
+    $scope.newTrade
+    $scope.newTrade = '';
+  }
+
+  $scope.trades = [];
+
+  $scope.createTrade = function() {
+    $scope.trades.push({message: this.newTrade, item_id: this.item.id});
+    $scope.message = '';
+  }
 
   $scope.initModal = function() {
     $scope.currentId = this.item.id
@@ -53,4 +59,18 @@ app.controller('ItemsController', ['$scope', '$http', '$location', function($sco
   }
 
   $scope.init();
+}]);
+
+app.controller('TradesController', ['$scope', '$http', function($scope, $http) {
+  $scope.trades = [];
+  var environment = document.getElementById('environment').innerHTML
+
+  $scope.getTrades = function() {
+    $http.get(environment + "api/v1/trades.json")
+      .success(function(result) {
+        $scope.trades = result;
+      });
+  }
+
+  $scope.getTrades();
 }]);
