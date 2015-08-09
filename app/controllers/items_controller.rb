@@ -1,11 +1,14 @@
 class ItemsController < ApplicationController
-  
+
   def new
     @item = Item.new
+    @categories = Category.all
   end
 
   def create
     item = Item.new(item_params)
+    item.category = Category.find(params[:item][:category_id])
+
     if current_user
       if item.save
         current_user.items << item
