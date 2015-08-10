@@ -20,7 +20,7 @@
 
               <div ng-if="null != item.picture_file_name">
 
-                <img src="{{item.picture_file_name}}" class="image-size">
+                <img src="/assets/{{item.picture_file_name}}" class="image-size">
               </div>
             </div>
             <div class="card-content center">
@@ -31,8 +31,8 @@
           <div id="modal{{item.id}}" class="modal">
               <div class="modal-content">
                 <h4>{{item.title}}</h4>
-                <h6>Desired trade items: {{item.desired_trade_items}}</h6>
-                <p>{{item.description}}</p>
+                <p>Description:<br>{{item.description}}</p>
+                <p>Desired Trade Items:<br>{{item.desired_trade_items}}</p>
                 <form ng-submit="createTrade()">
                   Message to Item Owner: <input type="text" ng-model="title"><br>
                   <button type="submit" class="btn-flat">Submit</button>
