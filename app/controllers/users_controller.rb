@@ -20,10 +20,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # def update
-  #   respond_with :api, :v1, User.update(params[:id], user_params)
-  # end
-
   private
 
   def user_params
