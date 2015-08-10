@@ -1,17 +1,3 @@
-      <!-- <div class="input-field col s3" ng-controller="CategoriesController">
-        <select>
-          <option ng-repeat="category in categories" value="1" selected>{{category.title}}</option>
-          <option value="2">Bikes</option>
-          <option value="3">Bags</option>
-          <option value="4">Books</option>
-          <label>Materialize Select</label>
-        </select>
-      </div> -->
-
-<div class="col s2 center">
-  <a href="/items/new" class="waves-effect waves-light cyan btn-large"><i class="material-icons left">add</i>Add Item</a>
-</div>
-
 <div class="section horizontal-list">
   <h5>Initiated Trades</h5>
   <div class="row">
@@ -218,7 +204,12 @@
       <div class="col s3" ng-repeat="item in items | filter:{'user_id':<%= current_user.id %>}:true | filter:query">
         <div class="card picture">
           <div class="card-image">
-            <img src="/assets/{{item.picture_file_name}}" class="image-size">
+            <div ng-if="null == item.picture_file_name">
+              <img src="/assets/default_image.jpg" class="image-size">
+            </div>
+            <div ng-if="null != item.picture_file_name">
+              <img src="/assets/{{item.picture_file_name}}" class="image-size">
+            </div>
           </div>
           <div class="card-content center">
             <h4 class="title">{{ item.title }}</h4>
