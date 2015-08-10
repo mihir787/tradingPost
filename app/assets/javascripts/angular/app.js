@@ -1,15 +1,5 @@
 app = angular.module('tradingPost', ['ngRoute']);
 
-app.config(['$routeProvider', '$locationProvider',
-  function($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: '/views/index.html',
-        controller: 'CategoriesController',
-        controllerAs: 'categories'
-      })
-}]);
-
 app.controller('CategoriesController', ['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.categories = [];
   var environment = document.getElementById('environment').innerHTML
