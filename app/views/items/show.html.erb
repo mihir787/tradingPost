@@ -1,0 +1,25 @@
+<div class="section"></div>
+<div class="section"></div>
+
+<div class="row">
+  <div class="col s6 offset-s3">
+    <div class="card large">
+      <div class="card-image">
+        <% if @item.picture_file_name.nil? %>
+          <img src="/assets/default_image.jpg" class="image-size-large">
+        <% else %>
+          <img src="/assets/<%= @item.picture_file_name %>" class="image-size-large">
+        <% end %>
+      </div>
+      <div class="card-content center">
+        <p class="card-title"><%= @item.title %></p>
+        <p class="card-description"><b>Description: </b><%= @item.description %></p>
+        <p class="card-desired_trade_items"><b>Desired Trade Items: </b><%= @item.desired_trade_items %></p>
+      <button type="submit" class="btn-flat cyan">Propose a Trade</button>
+      </div>
+      <!-- <div class="card-action">
+        <a href="#">This is a link</a>
+      </div> -->
+    </div>
+  </div>
+</div>

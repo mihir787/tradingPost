@@ -5,41 +5,43 @@
       <label for="search_for">Search for...</label>
     </div>
   </div>
+
 <div class="divider"></div>
 
 <div class="row" ng-controller="ItemsController">
-<div class="section horizontal-list">
+  <div class="section horizontal-list">
   <h5>Items in <%= @category.title %></h5>
-      <div class="col s3" id="mainPage" ng-repeat="item in items | filter:{'category_id':<%= @category.id %>}:true | filter:query">
-
-          <div class="card picture">
-            <div class="card-image">
-              <div ng-if="null == item.picture_file_name">
-                <img src="/assets/default_image.jpg" class="image-size">
-              </div>
-              <div ng-if="null != item.picture_file_name">
-                <img src="/assets/{{item.picture_file_name}}" class="image-size">
-              </div>
+    <div class="col s3" id="mainPage" ng-repeat="item in items | filter:{'category_id':<%= @category.id %>}:true | filter:query">
+      <a href="/items/{{item.id}}">
+        <div class="card picture">
+          <div class="card-image">
+            <div ng-if="null == item.picture_file_name">
+              <img src="/assets/default_image.jpg" class="image-size">
             </div>
-            <div class="card-content center">
-              <h4 class="title">{{ item.title }}</h4>
-              <button data-ng-click="initModal()" data-target="modal{{item.id}}" class="btn cyan">Info</button>
+            <div ng-if="null != item.picture_file_name">
+              <img src="/assets/{{item.picture_file_name}}" class="image-size">
             </div>
           </div>
-          <div id="modal{{item.id}}" class="modal">
-              <div class="modal-content">
-                <h4>{{item.title}}</h4>
-                <p>Description:<br>{{item.description}}</p>
-                <p>Desired Trade Items:<br>{{item.desired_trade_items}}</p>
-                <form ng-submit="createTrade()">
-                  Message to Item Owner: <input type="text" ng-model="title"><br>
-                  <button type="submit" class="btn-flat">Submit</button>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button data-ng-click="closeModal()" class="btn-flat">Close</button>
-              </div>
+          <div class="card-content center">
+            <h4 class="title">{{ item.title }}</h4>
+            <!-- <button data-ng-click="initModal()" data-target="modal{{item.id}}" class="btn cyan">Info</button> -->
           </div>
         </div>
-      </div>
+      </a>
+        <!-- <div id="modal{{item.id}}" class="modal">
+          <div class="modal-content">
+            <h4>{{item.title}}</h4>
+            <p>Description:<br>{{item.description}}</p>
+            <p>Desired Trade Items:<br>{{item.desired_trade_items}}</p>
+            <form ng-submit="createTrade()">
+              Message to Item Owner: <input type="text" ng-model="title"><br>
+              <button type="submit" class="btn-flat">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button data-ng-click="closeModal()" class="btn-flat">Close</button>
+          </div>
+        </div> -->
+    </div>
   </div>
+</div>
