@@ -27,17 +27,17 @@ class Seed
   end
 
   def generate_categories
-      Category.create!(title: "Furniture", image: "furniture.jpg")
-      Category.create!(title: "Tickets", image: "tickets.jpg")
-      Category.create!(title: "Computers", image: "computers.jpg")
-      Category.create!(title: "Sporting Equipment", image: "sports.jpg")
       Category.create!(title: "Books", image: "books.jpg")
-      Category.create!(title: "Electronics/Hardware", image: "electronics.jpg")
       Category.create!(title: "Clothes", image: "clothes.jpg")
+      Category.create!(title: "Computer Accessories", image: "comp-accessories.jpg")
+      Category.create!(title: "Computers", image: "computers.jpg")
+      Category.create!(title: "Electronics/Hardware", image: "electronics.jpg")
+      Category.create!(title: "Furniture", image: "furniture.jpg")
       Category.create!(title: "Housing", image: "housing.jpg")
       Category.create!(title: "Kitchen", image: "kitchen.jpg")
-      Category.create!(title: "Computer Accessories", image: "comp-accessories.jpg")
       Category.create!(title: "Parking", image: "parking.jpg")
+      Category.create!(title: "Sporting Equipment", image: "sports.jpg")
+      Category.create!(title: "Tickets", image: "tickets.jpg")
   end
 
   def generate_items
