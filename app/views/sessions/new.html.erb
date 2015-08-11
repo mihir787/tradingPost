@@ -1,11 +1,20 @@
-<div class="container">
+<div class="section"></div>
 
-  <h1>Login</h1>
-  <div class="container id="login_form">
+<div class="container">
+  <h1 class="center">Login</h1>
+  <div class="container" id="login_form">
     <%= form_for(:session, url: login_path) do |f| %>
       <div class="field"><%= f.text_field :email, placeholder: 'Email' %><br></div>
       <div class="field"><%= f.password_field :password, placeholder: 'Password' %><br></div>
       <div class="submit"><%= f.submit 'Submit'%></div>
     <% end %>
+  </div>
+  <div class="section"></div>
+  <div class="section"></div>
+  <div class="divider"></div>
+  <div class="section"></div>
+  <h1 class="center">New to Trading Post?</h1>
+  <div class="container center">
+    <a href="/users/new" class="waves-effect waves-light cyan btn-large"><i class="material-icons left">person</i>Register</a>
   </div>
 </div>
